@@ -18,4 +18,9 @@
            after:w-[25vw] sm:after:w-[20vw] lg:after:w-[15vw] 2xl:after:w-[10vw] after:h-[5px]
            after:bg-blue-800;
   }
+
+  body.overflow-hidden,
+  body.overflow-hidden .overflow-offset {
+    padding-right: var(--scrollbar-size);
+  }
 }

@@ -26,9 +26,9 @@ const config: UserConfig = {
       })
     })
   ],
-  test: {
-    include: ['src/**/*.{test,spec}.{js,ts}']
-  },
+  //test: {
+  //  include: ['src/**/*.{test,spec}.{js,ts}']
+  //},
   define: {
     //'process.env': process.env
     //__APP_VERSION__: JSON.stringify(pkg.version)

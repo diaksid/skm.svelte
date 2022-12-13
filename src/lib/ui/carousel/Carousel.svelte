@@ -4,17 +4,7 @@
   import { flip } from 'svelte/animate';
   import Figure from './shared/Figure.svelte';
   import Buttons from './shared/Buttons.svelte';
-  import type {
-    Image,
-    Item,
-    Css,
-    Show,
-    Controls,
-    Easing,
-    Loader,
-    Loaded,
-    Timeout
-  } from './Types';
+  import type { Image, Item, Css, Show, Controls, Easing, Loader, Loaded, Timeout } from './Types';
 
   let className = '';
   export { className as class };
@@ -59,8 +49,7 @@
   $: count = typeof show === 'function' ? show(innerWidth) : show;
   $: ratio = () => {
     const arr = aspect.split('/');
-    if (arr.length === 2)
-      return `${parseInt(arr[0]) * count} / ${arr[1].trim()}`;
+    if (arr.length === 2) return `${parseInt(arr[0]) * count} / ${arr[1].trim()}`;
     else return aspect;
   };
 
@@ -77,17 +66,14 @@
 
   const ANIMATION_DELAY = 60;
   const loop = (): void => {
-    if (
-      carousel
-        .getAnimations({ subtree: true })
-        .find((a) => a.playState === 'running')
-    )
-      timeout(loop, ANIMATION_DELAY / 2);
-    else timeout(next);
+    if (carousel)
+      if (carousel.getAnimations({ subtree: true }).find((a) => a.playState === 'running'))
+        timeout(loop, ANIMATION_DELAY / 2);
+      else timeout(next);
   };
   const finish = (): void => {
     if (play) {
-      carousel.getAnimations({ subtree: true }).forEach((a) => a.finish());
+      carousel?.getAnimations({ subtree: true }).forEach((a) => a.finish());
       timeoutClear();
     }
   };
@@ -122,8 +108,7 @@
   const toggle = (): boolean => (play = !play);
 
   const attach = (node: HTMLElement, child: Element | Image) => {
-    if (child instanceof Element && !node.children.length)
-      node.appendChild(child);
+    if (child instanceof Element && !node.children.length) node.appendChild(child);
     return;
   };
 
@@ -183,7 +168,11 @@
           style:max-width={`${100 / count}%`}
           style:left={`-${100 / count}%`}>
           {#if images}
-            <Figure {item} {css} {nativ} {loaded} />
+            <Figure
+              {item}
+              {css}
+              {nativ}
+              {loaded} />
           {/if}
         </div>
       {/each}
@@ -199,7 +188,9 @@
     {control}
     {play} />
 
-  <div bind:this={slot} hidden>
+  <div
+    bind:this={slot}
+    hidden>
     <slot />
   </div>
 </div>

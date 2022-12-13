@@ -8,7 +8,7 @@ const fixed = plugin(function ({ addVariant }) {
 module.exports = {
   content: ['./src/**/*.{html,svelte,ts,js}'],
 
-  presets: [require('./src/lib/assets/styles/tailwindcss/presets/common.cjs')],
+  presets: [require('./src/lib/assets/tailwindcss/presets/common.cjs')],
 
   theme: {
     extend: {

@@ -13,6 +13,7 @@ until [ $ac = "-" ]; do
     echo -e "5 : vite:build";
     echo -e "";
     echo -e "7 : generate:sitemap";
+    echo -e "8 : generate:css";
     echo -e "";
     echo -e "9 : gzipper:compress";
     echo -e "0 : clean";
@@ -51,6 +52,10 @@ until [ $ac = "-" ]; do
         "7")
             echo -e "> generate:sitemap";
             npm run generate:sitemap;;
+
+        "8")
+            echo -e "> generate:css";
+            npx tailwindcss -i ./static/assets/stylesheets/search.css -o ./static/assets/stylesheets/search.min.css --minify;;
 
         "9")
             echo -e "> gzipper:compress";

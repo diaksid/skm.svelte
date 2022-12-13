@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { Hit as Metrika } from '$ui/yandex/metrika';
+  import { Form as Search } from '$ui/yandex/search';
   import { Lightbox } from '$ui/lightbox';
   import { Gallery } from '$components/gallery';
   import { Infographic } from '$components/home';
@@ -80,6 +81,8 @@
     </header>
 
     <div class="w-full lg:max-w-xs xl:max-w-sm mx-auto px-2 pb-12 lg:pb-0">
+      <Search class="mb-4" />
+
       <Gallery
         class="overflow-hidden rounded-md lg:rounded-lg"
         {show}

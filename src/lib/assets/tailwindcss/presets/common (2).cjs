@@ -94,7 +94,7 @@ module.exports = {
       borderColor: ['disabled']
     }
   },*/
-  //./src/lib/assets/styles/tailwindcss/plugins/svg/
+  //./src/lib/assets/tailwindcss/plugins/svg/
   plugins: [
     disabled,
     require('../plugins/animation-play-state.cjs'),

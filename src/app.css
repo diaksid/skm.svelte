@@ -1,56 +1,10 @@
-/*@import '$lib/assets/styles/fonts/open-sans/variable';*/
-@import '$lib/assets/styles/tailwindcss';
-/*
+/*@import '$lib/assets/fonts/open-sans/variable';*/
+@import '$lib/assets/tailwindcss';
+
 @layer base {
-  :root {
-    --color-primary: 255 115 179;
-    --navbar-height: 3 rem;
-    --footer-height: 3 rem;
-  }
-
-  ::selection {
-    @apply text-gray-200 bg-blue-400;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply rounded-lg bg-gray-500;
-    -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
-    -webkit-overflow-scrolling: touch;
-  }
-
-  ::-webkit-scrollbar {
-    @apply bg-gray-500;
-    width: 6px;
-    height: 6px;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply rounded-lg bg-gray-800;
-    -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
-    -webkit-overflow-scrolling: touch;
-  }
-
-  html {
-    @apply w-full min-h-full;
-  }
-
-  body {
-    @apply relative
-           w-full min-h-screen overflow-y-scroll scroll-smooth antialiased
-           text-slate-800 dark:text-slate-300
-           bg-neutral-50 dark:bg-slate-800;
-  }
-  body.overflow-hidden,
-  body.overflow-hidden .overflow-offset {
-    @apply pr-1.5;
-  }
-
   main {
     @apply relative
-           min-h-screen pt-16;
+         min-h-screen pt-16;
   }
 
   h1 {
@@ -59,15 +13,9 @@
            text-gray-500 dark:text-gray-300;
   }
 
-  h1.title::after {
-    @apply content-null block mt-4
-           w-[25vw] sm:w-[20vw] lg:w-[15vw] 2xl:w-[10vw] h-[5px]
-           bg-blue-800;
-  }
-
   h2 {
     @apply text-3xl sm:text-3.5xl md:text-4xl lg:text-4.5xl
-           text-slate-800 dark:text-slate-500;
+         text-slate-800 dark:text-slate-500;
   }
 
   h3 {
@@ -84,47 +32,3 @@
     @apply font-semibold;
   }
 }
-
-@layer components {
-  .wrapper {
-    @apply w-full px-2 sm:px-4;
-  }
-
-  .content {
-    @apply w-full px-4 mx-auto lg:max-w-5xl;
-  }
-  .content p {
-    @apply text-justify;
-  }
-  .content ul {
-    @apply list-inside list-disc;
-  }
-
-  .button {
-    @apply flex items-center
-           max-w-min my-8 mx-auto px-4 py-2
-           font-semibold leading-6
-           border rounded-md shadow;
-  }
-}
-
-@layer utilities {
-  .text-shadow {
-    text-shadow: 1px 2px 3px black;
-  }
-
-  .disabled,
-  [disabled] {
-    @apply pointer-events-none touch-none select-none;
-  }
-
-  .clear-pseudo {
-    @apply before:content-null before:absolute before:-z-10 before:top-0 before:right-0 before:bottom-0 before:left-0 before:opacity-0
-           after:content-null after:table after:clear-both;
-  }
-}
-
-img:not([src]):not([srcset]) {
-  @apply invisible;
-}
-*/
