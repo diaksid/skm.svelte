@@ -9,7 +9,7 @@
   let interval: Timeout;
 
   onMount(() => {
-    document.querySelectorAll('nav > a').forEach((el: any) => (el.target = '_self'));
+    document.querySelectorAll('#navbar > a').forEach((el: any) => (el.target = '_self'));
     interval = setInterval(() => {
       if (typeof Ya !== 'undefined') {
         result.classList.remove('opacity-0');
