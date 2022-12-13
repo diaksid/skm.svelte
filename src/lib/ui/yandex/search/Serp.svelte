@@ -12,10 +12,10 @@
     document.querySelectorAll('#navbar > a').forEach((el: any) => (el.target = '_self'));
     interval = setInterval(() => {
       if (typeof Ya !== 'undefined') {
-        result.classList.remove('opacity-0');
         Ya.Site.Results.init();
         clearInterval(interval);
         interval = undefined;
+        result.classList.remove('opacity-0');
       }
     }, 100);
   });
@@ -31,7 +31,7 @@
 <div
   bind:this={result}
   id="ya-site-results"
-  class="opacity-0 transition-opacity duration-2000 ease-in
+  class="opacity-0 transition-opacity duration-1000 ease-in
          bg-transparent
          {className}"
   data-bem={JSON.stringify({

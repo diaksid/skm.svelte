@@ -81,7 +81,7 @@
     </header>
 
     <div class="w-full lg:max-w-xs xl:max-w-sm mx-auto px-2 pb-12 lg:pb-0">
-      <Search class="mb-4" />
+      <Search class="mb-10" />
 
       <Gallery
         class="overflow-hidden rounded-md lg:rounded-lg"
