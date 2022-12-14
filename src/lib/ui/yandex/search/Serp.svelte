@@ -1,39 +1,36 @@
 <script type="ts">
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount } from 'svelte';
   import './index.css';
 
-  let className: string = '';
+  let className = '';
   export { className as class };
+  export let duration = 500;
 
   let result: HTMLElement;
-  let interval: Timeout;
+
+  const load = () => {
+    Ya.Site.Results.init();
+    setTimeout(() => {result.classList.remove('hidden')}, 200);
+    setTimeout(() => {result.classList.remove('opacity-0', 'scale-y-0')}, 250);
+  };
 
   onMount(() => {
     document.querySelectorAll('#navbar > a').forEach((el: any) => (el.target = '_self'));
-    interval = setInterval(() => {
-      if (typeof Ya !== 'undefined') {
-        Ya.Site.Results.init();
-        clearInterval(interval);
-        interval = undefined;
-        result.classList.remove('opacity-0');
-      }
-    }, 100);
+    const script = document.createElement('script');
+    script.src = 'https://site.yandex.net/v2.0/js/all.js';
+    script.async = true;
+    script.addEventListener('load', load);
+    document.body.appendChild(script);
   });
-  onDestroy(() => interval && clearInterval(interval));
 </script>
-
-<svelte:head>
-  <script
-    src="https://site.yandex.net/v2.0/js/all.js"
-    async></script>
-</svelte:head>
 
 <div
   bind:this={result}
   id="ya-site-results"
-  class="opacity-0 transition-opacity duration-1000 ease-in
-         bg-transparent
+  class="custom
+         hidden opacity-0 scale-y-0
          {className}"
+  style:transition-duration={`${duration}ms`}
   data-bem={JSON.stringify({
     tld: 'ru',
     language: 'ru',
