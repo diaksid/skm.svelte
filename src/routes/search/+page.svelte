@@ -24,7 +24,7 @@
     <h1 class="title">Результаты поиска</h1>
   </header>
 
-  <Form class="content mb-8" reload={true} />
+  <Form class="content mb-8 px-8 xs:pr-[44px] sm:pr-[52px] md:pr-[55px] lg:pr-[142px]" reload={true} />
 
-  <Serp class="content mb-16" />
+  <Serp class="content mb-16 pr-8 lg:pr-4" />
 </main>

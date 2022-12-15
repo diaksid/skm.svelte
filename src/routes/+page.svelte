@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { Hit as Metrika } from '$ui/yandex/metrika';
-  import { Form as Search } from '$ui/yandex/search';
+  import { Form } from '$ui/yandex/search';
   import { Lightbox } from '$ui/lightbox';
   import { Gallery } from '$components/gallery';
   import { Infographic } from '$components/home';
@@ -14,9 +14,15 @@
   const show = (x: number) => (x < 480 && 1) || (x < 1024 && 2) || 1;
 
   const title = 'СКМ • Строительная Компания «Масштаб»';
-  const description = 'Строительная и техническая экспертиза, обследование зданий и сооружений в Москве. Строительная компания «Масштаб»';
+  const description =
+    'Строительная и техническая экспертиза, обследование зданий и сооружений в Москве. Строительная компания «Масштаб»';
 
-  onMount(() => document?.lazyloadInstance?.update());
+  let search: any;
+
+  onMount(() => {
+    search = Form;
+    document?.lazyloadInstance?.update();
+  });
 </script>
 
 <Metrika
@@ -81,7 +87,9 @@
     </header>
 
     <div class="w-full lg:max-w-xs xl:max-w-sm mx-auto px-2 pb-12 lg:pb-0">
-      <Search class="mb-10" />
+      <svelte:component
+        this={search}
+        class="mb-10" />
 
       <Gallery
         class="overflow-hidden rounded-md lg:rounded-lg"

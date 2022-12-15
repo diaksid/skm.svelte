@@ -10,8 +10,8 @@
 
   const load = () => {
     Ya.Site.Results.init();
-    setTimeout(() => {result.classList.remove('hidden')}, 200);
-    setTimeout(() => {result.classList.remove('opacity-0', 'scale-y-0')}, 250);
+    setTimeout(() => result.classList.remove('hidden'), 300);
+    setTimeout(() => result.classList.remove('opacity-0', 'scale-y-0'), 350);
   };
 
   onMount(() => {
