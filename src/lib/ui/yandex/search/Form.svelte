@@ -1,10 +1,10 @@
-<script type="ts">
+<script lang="ts">
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import { Icon } from '$ui/iconfy';
   import { beep } from '$utils/audio';
 
-  let className: string = '';
+  let className = '';
   export { className as class };
   export let reload = false;
 

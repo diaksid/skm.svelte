@@ -72,17 +72,17 @@ declare module '*.avif' {
 }
 
 /*
-interface WebPage {
-  itemtype?: string = 'WebPage';
-  path: string;
-  canonical: string;
-}
-
 interface Infographic {
   text: string;
   icon: any;
   max?: number;
   count?: number;
   node?: HTMLElement;
+}
+
+interface WebPage {
+  itemtype?: string = 'WebPage';
+  path: string;
+  canonical: string;
 }
 */

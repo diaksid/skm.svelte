@@ -6,8 +6,7 @@ import 'dotenv/config';
 
 //const __dirname = process.cwd();
 //const pkg = JSON.parse(fs.readFileSync(path.resolve(__dirname, './package.json'), 'utf8'));
-
-const siteUrl = new URL(process.env.VITE_APP_CANONICAL).origin;
+const siteUrl = new URL(process.env.VITE_APP_CANONICAL || '.').origin;
 const sitemapFile = path.resolve(process.cwd(), 'static/sitemap.xml');
 
 const PAGE_PRIORITY = 0.7;
@@ -16,16 +15,15 @@ const POST_PRIORITY = 0.7;
 const POST_CHANGEFREG = 'daily'; // daily weekly monthly
 const TIMESTAMP = new Date().toISOString();
 
-function getPages(location) {
-  const pages = fs.readdirSync(location).reduce((accumulator, currentValue) => {
+const getPages = (location: fs.PathLike) => {
+  const pages = fs.readdirSync(location).reduce((accumulator: string[], currentValue) => {
     if (path.extname(currentValue) === '' || path.basename(currentValue) === '+page.svelte') {
       accumulator.push(`${siteUrl}/${currentValue.replace('+page.svelte', '')}`);
     }
-
     return accumulator;
   }, []);
   return pages;
-}
+};
 /*
 export const getPosts = (location) => {
   const directories = fs
@@ -46,7 +44,7 @@ export const getPosts = (location) => {
   return articles;
 };
 */
-const render = (pages, posts) =>
+const render = (pages: any[], posts: any[]) =>
   `<?xml version="1.0" encoding="UTF-8" ?>
 <urlset
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -89,6 +87,6 @@ ${posts
 
 //const location = path.join(__dirname, BLOG_PATH);
 const pages = getPages('src/routes');
-const posts = []; // getPosts(location)
+const posts: any[] = []; // getPosts(location)
 
 fs.writeFileSync(sitemapFile, render(pages, posts));

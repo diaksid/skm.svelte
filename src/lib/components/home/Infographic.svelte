@@ -1,20 +1,18 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  export let infographic: any[]; // : Infographic[]
+  export let infographic: any[];
 
   let className: string = '';
   export { className as class };
 
   onMount(() => {
     let delay = 0;
-    infographic.forEach(
-      (info) => info.max && (delay = info.max > delay ? info.max : delay)
-    );
+    infographic.forEach((info) => info.max && (delay = info.max > delay ? info.max : delay));
     delay = delay * 10;
     infographic.forEach((info, idx) => {
       if (info.max) {
-        info.count = info.count || 0;
+        info.count ??= 0;
         setTimeout(() => {
           const inteval = setInterval(() => {
             if (info.count < info.max) infographic[idx].count = ++info.count;
@@ -35,7 +33,9 @@
          my-auto pb-8
          {className}">
   {#each infographic as info}
-    <figure class="flex flex-col items-center opacity-30" bind:this={info.node}>
+    <figure
+      class="flex flex-col items-center opacity-30"
+      bind:this={info.node}>
       <img
         class="mb-2"
         src={info.icon.src}
@@ -43,9 +43,10 @@
         height={info.icon.height}
         alt={info.text.toLowerCase()}
         loading="eager" />
-      <div class="mb-2
+      <div
+        class="mb-2
                   text-shadow font-bold text-4xl text-slate-400">
-        {info.count}
+        {@html info.count || '&mdash;'} 
       </div>
       <figcaption
         class="text-center

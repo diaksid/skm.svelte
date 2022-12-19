@@ -102,8 +102,11 @@
           {#if link.href === '/'}
             <Icon
               icon="mdi:cube{$page.url.pathname === '/' ? '' : '-outline'}"
+              class="mt-0.5 -ml-1 lg:ml-0"
               width="28"
-              height="28" />
+              height="28" >
+              {@html link.label}
+            </Icon>
           {:else}
             {@html link.label}
           {/if}

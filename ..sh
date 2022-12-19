@@ -7,7 +7,7 @@ until [ $ac = "-" ]; do
     echo -e "";
     echo -e "1 : npm:install";
     echo -e "2 : npm:update";
-    echo -e "3 : npm:upgrade";
+    echo -e "3 : npm:unlink";
     echo -e "";
     echo -e "4 : svelte:check";
     echo -e "5 : vite:build";
@@ -38,8 +38,8 @@ until [ $ac = "-" ]; do
             npm update;;
 
         "3")
-            echo -e "> npm:upgrade";
-            npm upgrade;;
+            echo -e "> npm:unlink";
+            npm unlink @iconify/json;;
 
         "4")
             echo -e "> svelte:check";
