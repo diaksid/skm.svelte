@@ -10,8 +10,7 @@
   export let activeItem: number;
 
   $: disabled =
-    options.behaviour !== 'loop' &&
-    (next ? activeItem === countItems - 1 : activeItem === 0);
+    options.behaviour !== 'loop' && (next ? activeItem === countItems - 1 : activeItem === 0);
 </script>
 
 <button

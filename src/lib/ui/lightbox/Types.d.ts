@@ -7,7 +7,7 @@ type Status =
     }
   | undefined;
 
-  type Loader = (() => void) | undefined;
+type Loader = (() => void) | undefined;
 
 interface Options {
   behaviour?: Behaviour;
