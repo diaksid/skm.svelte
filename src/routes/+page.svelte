@@ -33,7 +33,7 @@
   <div
     class="container
            flex flex-wrap items-center">
-    <header class="flex flex-col grow pb-8 lg:pb-12">
+    <header class="flex flex-col grow mb-8 lg:mb-12">
       <Lightbox css={{ overlay: 'overflow-offset' }}>
         <svelte:fragment slot="thumbnail">
           <img
@@ -80,7 +80,7 @@
       </h2>
     </header>
 
-    <div class="w-full lg:max-w-xs xl:max-w-sm mx-auto px-2 pb-12 lg:pb-0">
+    <div class="w-full lg:max-w-xs xl:max-w-sm mx-auto px-2 mb-12 lg:-mt-12 lg:mb-0">
       <Gallery
         class="overflow-hidden rounded-md lg:rounded-lg"
         {show}
