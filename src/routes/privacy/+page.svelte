@@ -342,11 +342,11 @@
           <div>
             Все предложения или вопросы по настоящей Политике конфиденциальности следует сообщать
             через контактные данные указанные на странице по адресу
-            <code>//skm.moscow/contacts</code>.
+            <code>https://skm.moscow/contacts</code>.
           </div>
           <div>
             Действующая Политика конфиденциальности размещена на странице по адресу
-            <code>//skm.moscow/privacy</code>.
+            <code>https://skm.moscow/privacy</code>.
           </div>
         </div>
       </div>
@@ -374,6 +374,6 @@
     @apply mr-2 font-medium text-slate-400;
   }
   code {
-    @apply font-mono text-slate-500;
+    @apply font-mono text-lg text-slate-500;
   }
 </style>
