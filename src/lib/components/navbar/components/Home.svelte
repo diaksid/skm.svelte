@@ -28,7 +28,7 @@
   <a
     on:click
     class="relative z-10 flex
-       {className}"
+           {className}"
     href="/"
     itemprop="relatedLink">
     <img

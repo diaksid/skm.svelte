@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
-  //import { Icon } from '$ui/iconfy';
+  import Icon from '$lib/ui/iconfy';
   import { beep } from '$lib/utils/audio';
 
   let className = '';
@@ -112,10 +112,10 @@
              {css.button}"
       type="button"
       disabled={!validation()}>
-      <!--Icon
+      <Icon
         icon="wpf:search"
         class="h-7 w-7"
-        hFlip={!reverse} /-->
+        hFlip={!reverse} />
     </button>
   {/if}
 </form>

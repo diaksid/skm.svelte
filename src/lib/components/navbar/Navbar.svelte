@@ -17,19 +17,19 @@
   let scrollY: any;
   $: scrolled = scrollY > 43;
 
-  let frame: HTMLElement;
   let navbar: HTMLElement;
+  let nav: HTMLElement;
   const duration = 250;
 
   const close = () => {
-    if (!navbar.classList.contains('opacity-0')) {
-      navbar.classList.add('opacity-0');
-      setTimeout(() => navbar.classList.add('invisible'), duration);
+    if (!nav.classList.contains('opacity-0')) {
+      nav.classList.add('opacity-0');
+      setTimeout(() => nav.classList.add('invisible'), duration);
     }
   };
 
   const toggle = () => {
-    if (navbar.classList.contains('opacity-0')) navbar.classList.remove('opacity-0', 'invisible');
+    if (nav.classList.contains('opacity-0')) nav.classList.remove('opacity-0', 'invisible');
     else close();
   };
 
@@ -50,7 +50,8 @@
 <svelte:window bind:scrollY />
 
 <div
-  bind:this={frame}
+  bind:this={navbar}
+  id="navbar"
   class:fixed={scrolled}
   class:absolute={!scrolled}
   class="z-10 top-0 left-0 w-full fixed:bg-slate-700/90 overflow-offset
@@ -72,8 +73,7 @@
       size={22} />
 
     <nav
-      bind:this={navbar}
-      id="navbar"
+      bind:this={nav}
       class="grid align-middle
              grid-cols-1 lg:auto-cols-max lg:grid-flow-col lg:gap-4
              absolute z-0 left-0 top-0 mt-12 ml-1 rounded-md lg:static lg:mt-0 lg:ml-4 lg:rounded-none
@@ -117,7 +117,7 @@
     <ToggleSearch
       class="p-2.5 mt-0.5 ml-4
              text-slate-500 hover:text-slate-200"
-      {frame}
+      frame={navbar}
       size={25}
       disabled={$page.url.pathname.indexOf('/search') === 0} />
 

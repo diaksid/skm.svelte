@@ -11,7 +11,9 @@
   });
 </script>
 
-<footer class="pt-4 pb-2">
+<footer
+  id="footer"
+  class="pt-4 pb-2">
   <div
     class="wrapper lg:container
            flex flex-row justify-between items-center

@@ -55,8 +55,6 @@
     content={shortName} />
 </svelte:head>
 
-<Navbar />
-
 <RouteTransition
   referesh={data.referesh}
   mode={1}
@@ -65,6 +63,8 @@
 </RouteTransition>
 
 <Footer />
+
+<Navbar />
 
 <ScreenBlock class="bg-slate-800" />
 

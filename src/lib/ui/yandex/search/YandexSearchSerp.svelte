@@ -15,7 +15,9 @@
   };
 
   onMount(() => {
-    document.querySelectorAll('#navbar > a').forEach((el: any) => (el.target = '_self'));
+    document
+      .querySelectorAll('#navbar a, #footer a')
+      .forEach((el: any) => (el.target = '_self'));
     const script = document.createElement('script');
     script.src = 'https://site.yandex.net/v2.0/js/all.js';
     script.async = true;
