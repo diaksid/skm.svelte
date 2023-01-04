@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { Hit as Metrika } from '$ui/yandex/metrika';
-  import { Lightbox } from '$ui/lightbox';
-  import { Gallery } from '$components/gallery';
-  import { Infographic } from '$components/home';
+  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
+  import { Lightbox } from '$lib/ui/lightbox';
+  import { Gallery } from '$lib/components/gallery';
+  import { Infographic } from '$lib/components/home';
   import backdrop from '$lib/assets/images/design/bg/home.jpg?w=1280&h=720&quality=40&webp';
 
   import type { PageData } from './$types';
@@ -19,25 +19,20 @@
   onMount(() => document?.lazyloadInstance?.update());
 </script>
 
-<Metrika
+<YandexMetrikaHit
   {title}
   {description} />
 
 <main
-  class="lazy dark
-         flex flex-col items-center
-         bg-no-repeat bg-center-top bg-cover
-         dark:!bg-none"
-  data-bg={backdrop.src}
+  class="justify-between grow"
   itemprop="mainContentOfPage">
   <div
-    class="container
+    class="container pt-8
            flex flex-wrap items-center">
     <header class="flex flex-col grow mb-8 lg:mb-12">
       <Lightbox css={{ overlay: 'overflow-offset' }}>
         <svelte:fragment slot="thumbnail">
           <img
-            rel="thumbnailUrl"
             class="sm:inline-block
                    pb-4 mx-auto sm:mx-0
                    drop-shadow-2xl hover:sepia"
@@ -45,10 +40,12 @@
             width={logo.thumbnail.width}
             height={logo.thumbnail.height}
             alt="skm: logotype thumbnail"
-            loading="eager" />
+            loading="eager"
+            itemprop="thumbnailUrl" />
           <link
+            href={logo.image.src}
             rel="image"
-            href={logo.image.src} />
+            itemprop="primaryImageOfPage" />
           <h1
             class="sm:inline-block
                    text-shadow text-center sm:text-left dark:text-slate-400">
@@ -92,7 +89,7 @@
   <Infographic {infographic} />
 
   <div
-    class="container pb-8 
+    class="container
            font-thin text-xs lg:text-sm text-justify lg:text-center text-white/50">
     Любая информация, представленная на данном сайте, носит исключительно информационный характер и
     ни при каких условиях не является публичной офертой, определяемой положениями

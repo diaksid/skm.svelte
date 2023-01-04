@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Hit as Metrika } from '$ui/yandex/metrika';
+  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
   import Grid from './Grid.svelte';
   import data from '$lib/assets/images/content/partners';
 
@@ -9,12 +9,12 @@
   const description = 'Партнёры предпрятия СКМ';
 </script>
 
-<Metrika
+<YandexMetrikaHit
   {title}
   {description} />
 
-<main class="dark:bg-transparent" itemprop="mainContentOfPage">
-  <header class="content mb-16">
+<main itemprop="mainContentOfPage">
+  <header class="content">
     <h1 class="title">Наши партнеры</h1>
   </header>
 

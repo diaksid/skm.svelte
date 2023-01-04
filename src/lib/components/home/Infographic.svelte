@@ -30,7 +30,7 @@
 <div
   class="container
          flex flex-wrap justify-around gap-8
-         my-auto pb-8
+         my-auto py-4
          {className}">
   {#each infographic as info}
     <figure

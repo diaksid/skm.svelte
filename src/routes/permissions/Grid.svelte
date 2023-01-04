@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Lightboxes, Modal, Thumbnail } from '$ui/lightbox';
+  import { Lightboxes, Modal, Thumbnail } from '$lib/ui/lightbox';
   import placeholder from '$lib/assets/icons/placeholder';
 
   export let data;
@@ -10,7 +10,7 @@
     document?.lazyloadInstance && document.lazyloadInstance.update();
 </script>
 
-<div class="content  pb-12 lg:pb-4">
+<div class="content">
   {#await promise}
     <div
       class="w-56 aspect-A4 mx-auto

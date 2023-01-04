@@ -1,17 +1,11 @@
 const config: NavLink[] = [
   {
-    href: '/',
-    label: 'Главная',
-    dark: true
-  },
-  {
     href: '/about',
     label: 'О!'
   },
   {
     href: '/activity',
-    label: 'Деятельность',
-    dark: true
+    label: 'Деятельность'
   },
   {
     href: '/permissions',
@@ -19,8 +13,7 @@ const config: NavLink[] = [
   },
   {
     href: '/projects',
-    label: 'Проекты',
-    dark: true
+    label: 'Проекты'
   },
   {
     href: '/partners',

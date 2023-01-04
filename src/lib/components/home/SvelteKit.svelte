@@ -1,11 +1,11 @@
 <script lang="ts">
   import { spring } from 'svelte/motion';
-  import { Icon } from '$ui/iconfy';
+  import Icon from '$lib/ui/iconfy';
 
   let className: string = '';
   export { className as class };
 
-  import { count } from '$stores';
+  import { count } from '$lib/stores';
 
   const increment = () => count.update(value => ++value);
   const decrement = () => count.update(value => --value);

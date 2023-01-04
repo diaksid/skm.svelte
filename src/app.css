@@ -2,9 +2,14 @@
 @import '$lib/assets/tailwindcss';
 
 @layer base {
-  main {
+  :root {
+    --navbar-height: 47px;
+  }
+
+  body {
     @apply relative
-         min-h-screen pt-16 overflow-y-hidden;
+           text-slate-800 dark:text-slate-300
+           bg-neutral-50 dark:bg-slate-800;
   }
 
   h1 {
@@ -15,7 +20,7 @@
 
   h2 {
     @apply text-3xl sm:text-3.5xl md:text-4xl lg:text-4.5xl
-         text-slate-800 dark:text-slate-500;
+           text-slate-800 dark:text-slate-500;
   }
 
   h3 {
@@ -31,4 +36,35 @@
   h4 {
     @apply font-semibold;
   }
+}
+
+@layer utilities {
+  .title {
+    @apply after:content-null after:block after:mt-4
+           after:w-[25vw] sm:after:w-[20vw] lg:after:w-[15vw] 2xl:after:w-[10vw] after:h-[5px]
+           after:bg-blue-800;
+  }
+
+  body.overflow-hidden,
+  body.overflow-hidden .overflow-offset {
+    padding-right: var(--scrollbar-size) !important;
+  }
+
+  .min-h-screen--navbar {
+    min-height: calc(100vh - var(--navbar-height));
+  }
+  .max-h-screen--navbar {
+    max-height: calc(100vh - var(--navbar-height));
+  }
+}
+
+main,
+[role='main'] {
+  @apply flex flex-col;
+  padding-top: var(--navbar-height);
+}
+main > header,
+[role='main'] > header {
+  @apply pt-4 sm:pt-8 md:pt-12
+         mb-12 md:mb-16 xl:mb-20;
 }

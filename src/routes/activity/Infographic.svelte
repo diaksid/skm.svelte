@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Lightbox } from '$ui/lightbox';
+  import { Lightbox } from '$lib/ui/lightbox';
 
   export let infographic: any[];
 </script>
 
 <div
-  class="content my-auto pb-12 lg:pb-4
+  class="content py-4
         grid gap-x-4 gap-y-10 text-center
         grid-cols-none sm:grid-cols-2 lg:grid-cols-3">
   {#each infographic as info}

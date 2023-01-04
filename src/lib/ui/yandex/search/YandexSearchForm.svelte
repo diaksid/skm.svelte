@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
-  import { Icon } from '$ui/iconfy';
-  import { beep } from '$utils/audio';
+  //import { Icon } from '$ui/iconfy';
+  import { beep } from '$lib/utils/audio';
 
   let className = '';
   export { className as class };
@@ -55,8 +55,7 @@
          {className}"
   class:flex-row-reverse={button && reverse}
   action="/search"
-  method="get"
-  charset="utf-8">
+  method="get">
   <input
     type="hidden"
     name="searchid"
@@ -92,7 +91,7 @@
       <div
         on:click|preventDefault={callback}
         on:keypress
-        rel="button"
+        role="button"
         tabindex="-1"
         class="absolute bottom-0 right-0 py-0.5 px-2
                opacity-80 font-semibold text-gray-500 hover:text-red-800
@@ -113,10 +112,10 @@
              {css.button}"
       type="button"
       disabled={!validation()}>
-      <Icon
+      <!--Icon
         icon="wpf:search"
         class="h-7 w-7"
-        hFlip={!reverse} />
+        hFlip={!reverse} /-->
     </button>
   {/if}
 </form>

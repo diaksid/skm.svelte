@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { Hit as Metrika } from '$ui/yandex/metrika';
-  //import { Gallery } from '$components/gallery';
+  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
+  //import { Gallery } from '$lib/components/gallery';
   import type { PageData } from './$types';
 
   export let data: PageData;
@@ -13,19 +13,17 @@
   onMount(() => document?.lazyloadInstance?.update());
 </script>
 
-<Metrika
+<YandexMetrikaHit
   {title}
   {description} />
 
-<main
-  class="flex flex-col dark:bg-transparent"
-  itemprop="mainContentOfPage">
-  <header class="content w-full pb-4">
+<main class="grow" itemprop="mainContentOfPage">
+  <header class="content">
     <h1 class="title">О предприятии</h1>
   </header>
 
   <div
-    class="content  pb-12 lg:pb-4 my-auto
+    class="content my-auto
               flex flex-wrap lg:flex-nowrap gap-8">
     <div class="flex-auto text-lg">
       <h2 class="mb-7">Строительная компания «МАСШТАБ»</h2>
@@ -45,17 +43,18 @@
     </div>
 
     <img
-      rel="thumbnailURL"
       class="flex-initial mx-auto
-            bg-no-repeat bg-center bg-1/5 bg-loading"
+             bg-no-repeat bg-center bg-1/5 bg-loading"
       src={image.thumbnail.src}
       width={image.thumbnail.width}
       height={image.thumbnail.height}
       alt="skm: thumbnail"
-      loading="eager" />
+      loading="eager"
+      itemprop="thumbnailURL" />
     <link
+      href={image.source.src}
       rel="image"
-      href={image.source.src} />
+      itemprop="image" />
   </div>
 
   <!--Gallery class="mt-auto" show={4} duration={5000} /-->

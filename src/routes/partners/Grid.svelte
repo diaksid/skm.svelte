@@ -13,7 +13,7 @@
 </script>
 
 <div
-  class="content px-8 pb-12 lg:pb-4
+  class="content px-8
          grid gap-x-8 gap-y-12
          grid-cols-none lg:grid-cols-2">
   {#each partners as partner}
