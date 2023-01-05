@@ -1,9 +1,4 @@
 export const load = async () => ({
-  backdrop: (
-    await import(
-      `$lib/assets/images/design/bg/activity.jpg?w=1280&h=720&quality=40&webp`
-    )
-  ).default,
   infographic: [
     {
       icon: (

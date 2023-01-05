@@ -33,7 +33,7 @@
 </svelte:head>
 
 <main>
-  <header class="content w-full mb-16">
+  <header class="content">
     <h1 class="title">Администрирование</h1>
   </header>
 

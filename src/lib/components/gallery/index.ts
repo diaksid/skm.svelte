@@ -1,1 +1,2 @@
-export { default as Gallery } from './Gallery.svelte'
+import Gallery from './Gallery.svelte';
+export default Gallery;

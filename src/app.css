@@ -65,6 +65,6 @@ main,
 }
 main > header,
 [role='main'] > header {
-  @apply pt-4 sm:pt-8 md:pt-12
-         mb-12 md:mb-16 xl:mb-20;
+  @apply pt-4 sm:pt-5 md:pt-8 xl:pt-12
+         mb-12 md:mb-14 xl:mb-16;
 }

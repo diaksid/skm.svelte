@@ -1,12 +1,12 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
-  import { Gallery } from '$lib/components/gallery';
+  import Gallery from '$lib/components/gallery';
   import Infographic from './Infographic.svelte';
 
   import type { PageData } from './$types';
   export let data: PageData;
-  const { backdrop, infographic } = data;
+  const { infographic } = data;
 
   const show = (x: number) =>
     (x < 640 && 1) || (x < 768 && 2) || (x < 1024 && 3) || (x < 1280 && 4) || 5;

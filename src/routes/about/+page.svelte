@@ -23,7 +23,7 @@
   </header>
 
   <div
-    class="content my-auto
+    class="content my-auto py-4
               flex flex-wrap lg:flex-nowrap gap-8">
     <div class="flex-auto text-lg">
       <h2 class="mb-7">Строительная компания «МАСШТАБ»</h2>

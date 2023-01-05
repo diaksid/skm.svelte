@@ -13,7 +13,7 @@
   class="dark:bg-transparent"
   itemprop="mainContentOfPage"
   role="main">
-  <header class="content pb-4">
+  <header class="content">
     <h1
       class="title"
       itemprop="name">
@@ -21,13 +21,15 @@
     </h1>
   </header>
 
-  <div class="content readable pb-8 text-slate-700 dark:text-slate-300">
+  <div
+    class="content readable
+           text-slate-700 dark:text-slate-300">
     <div>
       Настоящая Политика конфиденциальности персональных данных (далее &mdash; Политика
       конфиденциальности) действует в отношении всей информации, которую сайт
-      <b class="whitespace-nowrap">СК «Масштаб»</b> (далее &mdash; Сайт), расположенный на доменном
-      имени
-      <code>skm.moscow</code>, может получить о Пользователе во время использования Сайта.
+      <strong>Строительной Компании «Масштаб»</strong> (далее &mdash; Сайт), расположенный на
+      доменном имени <code>skm.moscow</code>, может получить о Пользователе во время использования
+      Сайта.
     </div>
 
     <div class="list">

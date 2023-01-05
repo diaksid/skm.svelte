@@ -2,9 +2,8 @@
   import { onMount } from 'svelte';
   import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
   import { Lightbox } from '$lib/ui/lightbox';
-  import { Gallery } from '$lib/components/gallery';
+  import Gallery from '$lib/components/gallery';
   import { Infographic } from '$lib/components/home';
-  import backdrop from '$lib/assets/images/design/bg/home.jpg?w=1280&h=720&quality=40&webp';
 
   import type { PageData } from './$types';
   export let data: PageData;
@@ -27,7 +26,7 @@
   class="justify-between grow"
   itemprop="mainContentOfPage">
   <div
-    class="container pt-8
+    class="container pt-8 xl:pt-12
            flex flex-wrap items-center">
     <header class="flex flex-col grow mb-8 lg:mb-12">
       <Lightbox css={{ overlay: 'overflow-offset' }}>
