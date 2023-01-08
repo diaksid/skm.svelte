@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
-  import Icon from '$lib/ui/iconfy';
-  import { YandexMap } from '$lib/ui/yandex';
+  import { YandexMetrikaHit } from 'daks-svelte';
+  import { Envelope, MapPin, PhoneArrowUpRight } from 'svelte-heros-v2';
+  import { YandexMap } from 'daks-svelte';
 
   const canonical = new URL(import.meta.env.VITE_APP_CANONICAL).origin;
 
@@ -15,8 +15,7 @@
         properties: {
           iconContent: '<strong class="tracking-wider">СК «МАСШТАБ»</strong>',
           balloonContentHeader: 'Строительная компания «МАСШТАБ»',
-          balloonContentBody:
-            '<img class=mx-auto src=/images/ymap.webp width=192 height=192 />',
+          balloonContentBody: '<img class=mx-auto src=/images/ymap.webp width=192 height=192 />',
           balloonContentFooter:
             '<div class=text-center>время работы: 9 <sup>00</sup> -- 19 <sup>00</sup></div>'
         },
@@ -57,21 +56,17 @@
     <a
       class="hover:text-sky-500"
       href="tel://{telephone.replace(/[\s-()]/g, '')}">
-      <Icon
-        icon="material-symbols:phone-in-talk-outline"
-        class="inline"
-        width="24"
-        height="24" />
+      <PhoneArrowUpRight
+        class="inline -mt-0.5 mr-2"
+        size="24" />
       <span itemprop="telephone">{telephone}</span>
     </a>
     <a
       class="hover:text-sky-500"
       href="mailto:{email}">
-      <Icon
-        icon="material-symbols:mail-outline"
-        class="inline"
-        width="24"
-        height="24" />
+      <Envelope
+        class="inline -mt-0.5 mr-2"
+        size="24" />
       <span itemprop="email">{email}</span>
     </a>
     <div
@@ -85,11 +80,9 @@
         href={address.url}
         target="_blank"
         itemprop="url">
-        <Icon
-          icon="material-symbols:location-on-outline"
-          class="inline"
-          width="24"
-          height="24" />
+        <MapPin
+          class="inline -mt-0.5 mr-2"
+          size="24" />
         <span itemprop="postalCode">{address.postalCode}</span>,
         <span itemprop="addressLocality">{address.addressLocality}</span>,
         <span itemprop="streetAddress">{@html address.streetAddress}</span>

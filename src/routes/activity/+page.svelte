@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
+  import { YandexMetrikaHit } from 'daks-svelte';
   import Gallery from '$lib/components/gallery';
   import Infographic from './Infographic.svelte';
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Lightbox } from '$lib/ui/lightbox';
+  import { Lightbox } from 'daks-svelte';
 
   export let infographic: any[];
 </script>

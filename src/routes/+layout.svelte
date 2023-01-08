@@ -1,10 +1,12 @@
 <script lang="ts">
   import { browser } from '$app/environment';
   import LazyLoad from 'vanilla-lazyload';
-  import { Navbar } from '$lib/components/navbar';
-  import { Footer } from '$lib/components/footer';
-  import { RouteTransition, ScreenBlock } from '$lib/ui';
-  import { YandexMetrikaInit } from '$lib/seo/yandex/metrika';
+  import { Navbar } from 'daks-svelte';
+  import { Footer } from 'daks-svelte';
+  import { RouteTransition, ScreenBlock } from 'daks-svelte';
+  import { YandexMetrikaInit } from 'daks-svelte';
+
+  import navigation from '$lib/configs/navigation';
 
   import website from '$lib/configs/website';
   const { shortName, themeColor, tileColor } = website;
@@ -62,9 +64,9 @@
   <slot />
 </RouteTransition>
 
-<Footer />
+<Footer {...navigation.footer} />
 
-<Navbar />
+<Navbar {...navigation.navbar} />
 
 <ScreenBlock class="bg-slate-800" />
 

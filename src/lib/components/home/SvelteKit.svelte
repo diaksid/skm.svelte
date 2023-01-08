@@ -1,6 +1,6 @@
 <script lang="ts">
   import { spring } from 'svelte/motion';
-  import Icon from '$lib/ui/iconfy';
+  //import Icon from 'daks-svelte';
 
   let className: string = '';
   export { className as class };
@@ -36,11 +36,11 @@
            text-4xl text-slate-500 border-0 touch-manipulation"
     aria-label="Уменьшить счётик"
     on:click={decrement}>
-    <Icon
+    <!--Icon
       icon="material-symbols:sentiment-dissatisfied-outline"
       class="w-auto stroke-2 vector-non-scaling-stroke drop-shadow-lg
             hover:animate-ping hover:text-red-700"
-      ariaHidden="true" />
+      ariaHidden="true" /-->
   </button>
 
   <div class="relative w-28 h-14 overflow-hidden">
@@ -63,10 +63,10 @@
     class="flex items-center justify-center w-32 text-4xl text-slate-500 border-0 touch-manipulation"
     aria-label="Увеличить счётик"
     on:click={increment}>
-    <Icon
+    <!--Icon
       icon="material-symbols:sentiment-satisfied-outline"
       class="w-auto stroke-2 vector-non-scaling-stroke drop-shadow-lg
             hover:animate-ping hover:text-green-700"
-      ariaHidden="true" />
+      ariaHidden="true" /-->
   </button>
 </div>

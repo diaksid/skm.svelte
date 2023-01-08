@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
+  import { YandexMetrikaHit } from 'daks-svelte';
 
   const title = 'СКМ • Политика конфиденциальности';
   const description = 'Политика конфиденциальности персональных данных предприятия СК «Масштаб»';

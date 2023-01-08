@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
-  import { Lightbox } from '$lib/ui/lightbox';
+  import { YandexMetrikaHit } from 'daks-svelte';
+  import { Lightbox } from 'daks-svelte';
   import Gallery from '$lib/components/gallery';
   import { Infographic } from '$lib/components/home';
 

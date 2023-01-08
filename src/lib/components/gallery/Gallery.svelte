@@ -1,6 +1,6 @@
 <script lang="ts">
   import { linear } from 'svelte/easing';
-  import { Carousel } from '$lib/ui/carousel';
+  import { Carousel } from 'daks-svelte';
   import { screens as load } from '$lib/assets/images/gallery';
 
   let promise = load();

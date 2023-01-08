@@ -14,7 +14,6 @@ interface MenuItem {
   label: string;
   title?: string;
   handle?: (event?: Event) => void;
-  dark?: boolean;
 }
 
 interface NavLink extends MenuItem {
