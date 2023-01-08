@@ -7,7 +7,7 @@
 
   import '../app.css';
 
-  import app from '$lib/configs/website';
+  import app from '$lib/configs/app';
   import navigation from '$lib/configs/navigation';
 
   if (!import.meta.env.SSR) {

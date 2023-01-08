@@ -63,8 +63,8 @@ export const handle: Handle = async ({ event, resolve }) => {
   if (response.headers.get('content-type') === 'text/html') {
     const schema = microdata(event.url.pathname);
     let html = (await response.text())
-      .replace('%schema.page%', schema.page)
-      .replaceAll('%app.version%', pkg.version);
+      .replaceAll('%app.version%', pkg.version)
+      .replace('%schema.page%', schema.page);
     if (building) html = await minify(html, minification_options);
     return new Response(html, {
       status: response.status,
