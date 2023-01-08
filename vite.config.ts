@@ -10,9 +10,8 @@ import { fileURLToPath } from 'url';
 const pkg = JSON.parse(
   readFileSync(fileURLToPath(new URL('package.json', import.meta.url)), 'utf8')
 );
-
-process.env.APP_VERSION ??= pkg.version;
 */
+//process.env.APP_VERSION ??= pkg.version;
 
 const config: UserConfig = {
   logLevel: 'error',

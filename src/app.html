@@ -12,7 +12,17 @@
   <meta
     name="robots"
     content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  %sveltekit.head%
+  <link
+    rel="alternate icon"
+    href="%sveltekit.assets%/favicon.ico?v=%app.version%"
+    sizes="any" />
+  <link
+    rel="apple-touch-icon"
+    href="%sveltekit.assets%/favicon/maskable/192.png?v=%app.version%" />
+  <link
+    rel="icon"
+    href="%sveltekit.assets%/favicon/192.png?v=%app.version%"
+    type="image/png" />
   <link
     rel="manifest"
     href="/manifest.webmanifest" />
@@ -22,6 +32,7 @@
   <link
     rel="yandex-tableau-widget"
     href="/tableau.json" />
+  %sveltekit.head%
 </head>
 
 <body

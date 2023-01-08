@@ -1,24 +1,16 @@
 <script lang="ts">
-  import { browser } from '$app/environment';
   import LazyLoad from 'vanilla-lazyload';
-  import { Navbar } from 'daks-svelte';
-  import { Footer } from 'daks-svelte';
-  import { RouteTransition, ScreenBlock } from 'daks-svelte';
-  import { YandexMetrikaInit } from 'daks-svelte';
-
-  import navigation from '$lib/configs/navigation';
-
-  import website from '$lib/configs/website';
-  const { shortName, themeColor, tileColor } = website;
+  import { Navbar, Footer, RouteTransition, ScreenBlock, YandexMetrikaInit } from 'daks-svelte';
 
   import type { PageData } from './$types';
   export let data: PageData;
 
   import '../app.css';
 
-  const build = import.meta.env.VITE_APP_BUILD;
+  import app from '$lib/configs/website';
+  import navigation from '$lib/configs/navigation';
 
-  if (browser) {
+  if (!import.meta.env.SSR) {
     if (!('color-theme' in localStorage)) {
       localStorage.setItem('color-theme', 'dark');
       document.documentElement.classList.add('dark');
@@ -32,29 +24,18 @@
 </script>
 
 <svelte:head>
-  <link
-    rel="alternate icon"
-    href="/favicon.ico?v={build}"
-    sizes="any" />
-  <link
-    rel="apple-touch-icon"
-    href="/favicon/maskable/192.png?v={build}" />
-  <link
-    rel="icon"
-    href="/favicon/192.png?v={build}"
-    type="image/png" />
   <meta
     name="theme-color"
-    content={themeColor} />
+    content={app.themeColor} />
   <meta
     name="msapplication-TileColor"
-    content={tileColor} />
+    content={app.tileColor} />
   <meta
     name="application-name"
-    content={shortName} />
+    content={app.shortName} />
   <meta
     name="apple-mobile-web-app-title"
-    content={shortName} />
+    content={app.shortName} />
 </svelte:head>
 
 <RouteTransition

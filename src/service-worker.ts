@@ -1,5 +1,4 @@
 // based on https://github.com/tretapey/svelte-pwa/blob/master/public/service-worker.js
-
 import { build, files, version } from '$service-worker';
 
 const worker: any = self;
@@ -9,7 +8,6 @@ const to_cache = build.concat(files);
 
 worker.addEventListener('install', (event: any) => {
   //console.log('[ServiceWorker] Install');
-
   event.waitUntil(
     caches.open(CACHE_NAME).then(async (cache) => {
       //console.log('[ServiceWorker] Pre-caching offline page');
@@ -39,9 +37,8 @@ worker.addEventListener('activate', (event: any) => {
 
 self.addEventListener('fetch', (event: any) => {
   //console.log('[ServiceWorker] Fetch', event.request.url);
-  if (event.request.mode !== 'navigate') {
-    return;
-  }
+  if (event.request.mode !== 'navigate') return;
+
   event.respondWith(
     fetch(event.request).catch(async () => {
       const cache = await caches.open(CACHE_NAME);

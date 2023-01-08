@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
   import { YandexMetrikaHit } from 'daks-svelte';
   //import { Gallery } from '$lib/components/gallery';
-  import type { PageData } from './$types';
 
+  import type { PageData } from './$types';
   export let data: PageData;
   const { image } = data;
 
