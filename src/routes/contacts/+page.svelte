@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { YandexMetrikaHit } from 'daks-svelte';
+  import { YandexMetrikaHit, YandexMap } from 'daks-svelte';
   import { Envelope, MapPin, PhoneArrowUpRight } from 'svelte-heros-v2';
-  import { YandexMap } from 'daks-svelte';
 
   const canonical = new URL(import.meta.env.VITE_APP_CANONICAL).origin;
 

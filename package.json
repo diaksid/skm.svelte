@@ -1,6 +1,6 @@
 {
   "name": "skm.svelte",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "construction company «masshtab»",
   "repository": {
     "type": "git",
@@ -32,7 +32,6 @@
     "@sveltejs/adapter-node": "*",
     "@sveltejs/adapter-static": "*",
     "@sveltejs/kit": "*",
-    "@types/html-minifier-terser": "*",
     "@typescript-eslint/eslint-plugin": "*",
     "@typescript-eslint/parser": "*",
     "autoprefixer": "*",
@@ -43,7 +42,6 @@
     "eslint": "*",
     "eslint-config-prettier": "*",
     "eslint-plugin-svelte3": "*",
-    "html-minifier-terser": "*",
     "postcss": "*",
     "postcss-import": "*",
     "postcss-load-config": "*",

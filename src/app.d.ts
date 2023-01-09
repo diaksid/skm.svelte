@@ -1,24 +1,9 @@
 // See https://kit.svelte.dev/docs/types#app
 declare namespace App {
-  interface Locals {
-    userid: string;
-    count: number;
-  }
-
+  // interface Locals {}
   // interface PageData {}
   // interface Error {}
   // interface Platform {}
-}
-
-interface MenuItem {
-  label: string;
-  title?: string;
-  handle?: (event?: Event) => void;
-}
-
-interface NavLink extends MenuItem {
-  href: string;
-  links?: NavLink[];
 }
 
 declare module '*?webp' {
@@ -69,19 +54,3 @@ declare module '*.avif' {
   const value: any;
   export = value;
 }
-
-/*
-interface Infographic {
-  text: string;
-  icon: any;
-  max?: number;
-  count?: number;
-  node?: HTMLElement;
-}
-
-interface WebPage {
-  itemtype?: string = 'WebPage';
-  path: string;
-  canonical: string;
-}
-*/

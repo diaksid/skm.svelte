@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { YandexMetrikaHit } from 'daks-svelte';
-  import { YandexSearchForm, YandexSearchSerp } from 'daks-svelte';
+  import { YandexMetrikaHit, YandexSearchForm, YandexSearchSerp } from 'daks-svelte';
 
   const robots = 'noindex, follow';
   const title = 'СКМ • Поиск';

@@ -25,9 +25,13 @@ const config = {
       $assets: resolve(__dirname, 'static')
     },
 
-    adapter: adapter(options)
+    adapter: adapter(options),
 
-    //inlineStyleThreshold: 8192
+    files: {
+      serviceWorker: 'node_modules/daks-svelte/app/service-worker'
+    }
+
+    // inlineStyleThreshold: 8192
   }
 };
 
