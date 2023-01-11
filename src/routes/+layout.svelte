@@ -1,8 +1,9 @@
 <script lang="ts">
   import LazyLoad from 'vanilla-lazyload';
   import { Navbar, Footer, RouteTransition, ScreenBlock, YandexMetrikaInit } from 'daks-svelte';
-  import '$lib/assets/iconify';
+
   import '../app.css';
+  import '$iconify';
 
   import type { PageData } from './$types';
   export let data: PageData;

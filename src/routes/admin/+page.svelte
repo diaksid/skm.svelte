@@ -1,14 +1,14 @@
 <script lang="ts">
   import { Icon } from 'daks-svelte';
   import Bundle from './Bundle.svelte';
-  import bundles from '$lib/assets/iconify/bundles.json';
-  import custom from '$lib/assets/iconify';
+
+  import type { PageData } from './$types';
+  export let data: PageData;
 
   let waiting = false;
   $: iconset = {};
 
-  const handleIconset = async (ev: Event) => {
-    ev.preventDefault();
+  const upload = async () => {
     waiting = true;
     const response = await fetch('/admin/iconify', {
       method: 'GET',
@@ -19,10 +19,11 @@
     });
     if (response.ok) {
       iconset = await response.json();
-    }
-    else alert('Ошибка HTTP: ' + response.status);
+    } else alert('Ошибка HTTP: ' + response.status);
     setTimeout(() => (waiting = false), 300);
   };
+
+  //afterUpdate(upload);
 </script>
 
 <svelte:head>
@@ -40,7 +41,7 @@
   {#if import.meta.env?.DEV}
     <div class="content flex justify-start items-center mb-8">
       <button
-        on:click={handleIconset}
+        on:click|preventDefault={upload}
         type="button"
         class="px-3 py-2 mx-2 border-2 rounded"
         disabled={waiting}>
@@ -52,19 +53,21 @@
           class="w-8 h-8" />
       {:else}
         {#each Object.entries(iconset) as [key, val]}
-          <div class="px-2"><i class="font-mono text-xl text-slate-500">{key}</i> : {val}</div>
+          <div class="px-2">
+            <i class="font-mono text-xl text-slate-500">{key}</i> : {val}
+          </div>
         {/each}
       {/if}
     </div>
   {/if}
 
   <div class="content divide-y divide-dotted">
-    {#if custom.length}
+    {#if data.custom.length}
       <Bundle
         prefix="custom"
-        icons={custom} />
+        icons={data.custom} />
     {/if}
-    {#each bundles as { prefix, icons }}
+    {#each data.bundles as { prefix, icons }}
       <Bundle
         {prefix}
         icons={Object.keys(icons)} />

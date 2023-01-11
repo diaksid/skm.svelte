@@ -1,7 +1,7 @@
 import type { Handle } from '@sveltejs/kit';
 import { handle as _handle } from 'daks-svelte/app';
 
-if (import.meta.env.DEV) await import('daks-svelte/ui/iconify/server');
+import.meta.env.DEV && (await import('daks-svelte/ui/iconify/server'));
 
 const redirects: any = {
   // '': ''
