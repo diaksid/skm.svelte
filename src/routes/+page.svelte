@@ -46,11 +46,11 @@
             itemprop="primaryImageOfPage" />
           <h1
             class="sm:inline-block
-                   text-shadow text-center sm:text-left dark:text-slate-400">
+                   text-shadow text-center sm:text-left text-gray-400 dark:text-gray-500">
             <span
               class="block
-                     text-3.5xl md:text-4xl xl:text-4.5xl 2xl:text-5xl uppercase">
-              «Масштаб»
+                     text-3.5xl md:text-4xl lg:text-5xl uppercase">
+              Масштаб &trade;
             </span>
             <span class="text-xl xs:text-2xl sm:text-2.5xl md:text-3.5xl 2xl:text-4.5xl">
               Строительная&nbsp;компания
@@ -69,8 +69,8 @@
       <h2
         class="pt-4 xl:pt-8 2xl:pt-12 
                text-center lg:text-left
-               text-3xl xs:text-4xl md:text-5xl 2xl:text-6xl
-               text-slate-700 dark:text-slate-300">
+               text-3xl xs:text-4xl md:text-5xl lg:text-4.5xl xl:text-5xl 2xl:text-6xl
+               text-slate-500 dark:text-slate-300">
         Строим будущее <span class="whitespace-nowrap">по-новому</span>
       </h2>
     </header>
