@@ -15,7 +15,7 @@ process.env.APP_VERSION ??= pkg.version;
 const extensions = ['.png', '.jpg', '.jpeg'];
 
 const config: UserConfig = {
-  logLevel: 'error',
+  logLevel: 'error', // 'info'
   plugins: [
     imagetools({
       defaultDirectives: (url) => {

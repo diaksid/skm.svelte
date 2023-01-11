@@ -88,7 +88,8 @@
 
   <div
     class="container
-           font-thin text-xs lg:text-sm text-justify lg:text-center text-white/50">
+           font-thin text-xs lg:text-sm text-justify lg:text-center
+           text-gray-600 dark:text-gray-400">
     Любая информация, представленная на данном сайте, носит исключительно информационный характер и
     ни при каких условиях не является публичной офертой, определяемой положениями
     статьи&nbsp;437&nbsp;ГК&nbsp;РФ.

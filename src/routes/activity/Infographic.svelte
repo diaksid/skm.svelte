@@ -12,13 +12,13 @@
     <Lightbox css={{ overlay: 'overflow-offset' }} scrollable={true}>
       <figure slot="thumbnail" class="flex flex-col items-center">
         <img
-          class="mb-8"
+          class="p-5 mb-8 bg-slate-500 dark:bg-transparent rounded-xl drop-shadow-lg  shadow-gray-400"
           src={info.icon.src}
           width={info.icon.width}
           height={info.icon.height}
           alt={info.title}
           loading="eager" />
-        <figcaption class="text-xl text-slate-300">
+        <figcaption class="text-xl dark:text-slate-300">
           {info.title}
         </figcaption>
       </figure>

@@ -37,21 +37,20 @@
       class="flex flex-col items-center opacity-30"
       bind:this={info.node}>
       <img
-        class="mb-2"
+        class="p-7 mb-4 bg-slate-500 dark:bg-transparent rounded-xl drop-shadow-lg shadow-gray-400"
         src={info.icon.src}
         width={info.icon.width}
         height={info.icon.height}
         alt={info.text.toLowerCase()}
         loading="eager" />
       <div
-        class="mb-2
-                  text-shadow font-bold text-4xl text-slate-400">
+        class="mb-2 text-shadow font-bold text-4xl
+               text-slate-400 dark:text-slate-400">
         {@html info.count || '&mdash;'} 
       </div>
       <figcaption
-        class="text-center
-               text-lg md:text-xl
-               text-slate-300">
+        class="text-center text-lg md:text-xl
+               text-slate-600 dark:text-slate-300">
         {info.text}
       </figcaption>
     </figure>

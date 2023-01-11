@@ -2,7 +2,7 @@ export const load = async () => ({
   infographic: [
     {
       icon: (
-        await import(`$lib/assets/images/content/activity/info.0.png?w=110&webp`)
+        await import(`$lib/assets/images/content/activity/info.0.png?w=160&webp`)
       ).default,
       title: 'Обследование зданий и сооружений',
       content: `
@@ -13,7 +13,7 @@ export const load = async () => ({
     },
     {
       icon: (
-        await import(`$lib/assets/images/content/activity/info.1.png?w=110&webp`)
+        await import(`$lib/assets/images/content/activity/info.1.png?w=160&webp`)
       ).default,
       title: 'Лабораторное сопровождение строительства',
       content: `
@@ -33,7 +33,7 @@ export const load = async () => ({
     },
     {
       icon: (
-        await import(`$lib/assets/images/content/activity/info.2.png?w=110&webp`)
+        await import(`$lib/assets/images/content/activity/info.2.png?w=160&webp`)
       ).default,
       title: 'Геодезия и мониторинг',
       content: `
@@ -47,7 +47,7 @@ export const load = async () => ({
     },
     {
       icon: (
-        await import(`$lib/assets/images/content/activity/info.3.png?w=110&webp`)
+        await import(`$lib/assets/images/content/activity/info.3.png?w=160&webp`)
       ).default,
       title: 'Судебная техническая экспертиза',
       content: `
@@ -62,7 +62,7 @@ export const load = async () => ({
     },
     {
       icon: (
-        await import(`$lib/assets/images/content/activity/info.4.png?w=110&webp`)
+        await import(`$lib/assets/images/content/activity/info.4.png?w=160&webp`)
       ).default,
       title: 'Энергоэффективность и воздухпроницаемость',
       content: `
